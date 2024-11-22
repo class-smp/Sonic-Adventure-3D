@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Adventure 3D</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/71250/ss_db953d2c9dfb6218bde482ad89acc0f7d8284000.1920x1080.jpg?t=1721832639');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #loadingScreen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #00BFFF;
+            font-size: 24px;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+
+        #gameScreen {
+            display: none; 
+        }
+
+        h1 {
+            display: none;
+            color: white;
+            font-size: 45px;
+            text-shadow: 2px 2px 4px #000;
+            transition: opacity 1s;
+        }
+
+        .play-button {
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00BFFF;
+            background-color: transparent;
+            border: 2px solid #00BFFF;
+            border-radius: 25px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .play-button:hover {
+            background-color: #00BFFF;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+        }
+
+        .play-button:focus {
+            outline: none;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .play-button {
+            animation: bounce 2s infinite;
+        }
+
+        .controls {
+            padding: 20px;
+            display: none; /* Hidden by default */
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            border: 2px solid #00BFFF;
+        }
+
+        .controls p {
+            animation: fadeIn 1.5s;
+            margin: 10px 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div id="loadingScreen">
+        <div>Loading Sonic Adventure 3D...</div>
+    </div>
+
+    <div id="gameScreen">
+        <button class="play-button" onclick="showControls()">PLAY</button>
+        <h1 id="message">Sonic sucks, we hate sonic! womp womp sonic! mario MX is the worst! mario and sonic ewwwww!! boooo!</h1>
+        <div class="controls" id="controls">
+            <p>Controls:</p>
+            <p>W - Move Forward</p>
+            <p>A - Move Left</p>
+            <p>S - Move Backward</p>
+            <p>D - Move Right</p>
+            <p>Space - Jump</p>
+            <p>Press Esc to Exit</p>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById("loadingScreen").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("loadingScreen").style.display = "none"; 
+                document.getElementById("gameScreen").style.display = "flex";
+            }, 1000);
+        }, 10000);
+
+        function showControls() {
+            const controls = document.getElementById("controls");
+            controls.style.display = "block";
+        }
+
+        function showMessage() {
+            const message = document.getElementById("message");
+            message.style.display = "block";
+            message.style.opacity = "1";
+            message.style.transition = "opacity 2s";
+        }
+    </script>
+</body>
+</html>
