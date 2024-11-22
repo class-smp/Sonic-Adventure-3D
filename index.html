@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Adventure 3D</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/71250/ss_db953d2c9dfb6218bde482ad89acc0f7d8284000.1920x1080.jpg?t=1721832639'); /* Replace with the actual link to your Sonic Adventure background */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        h1 {
+            display: none;
+            color: white;
+            font-size: 45px;
+            text-shadow: 2px 2px 4px #000;
+            transition: opacity 1s;
+        }
+
+        .play-button {
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00BFFF; /* Sonic blue color */
+            background-color: transparent;
+            border: 2px solid #00BFFF;
+            border-radius: 25px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .play-button:hover {
+            background-color: #00BFFF;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+        }
+
+        .play-button:focus {
+            outline: none;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .play-button {
+            animation: bounce 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <button class="play-button" onclick="showMessage()">PLAY</button>
+    <h1 id="message">Sonic sucks, we hate sonic! womp womp sonic! mario MX is the worst! mario and sonic ewwwww!! boooo!</h1>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.opacity = "1";
+            document.getElementById("message").style.transition = "opacity 2s";
+        }
+    </script>
+</body>
+</html>
