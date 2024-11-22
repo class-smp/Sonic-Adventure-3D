@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Rivals 2D</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.gamespot.com/a/uploads/original/gamespot/images/2006/122/reviews/725466-928010_20060503_002.jpg'); /* Replace with the actual link to your Sonic Adventure background */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        h1 {
+            display: none;
+            color: white;
+            font-size: 45px;
+            text-shadow: 2px 2px 4px #000;
+            transition: opacity 1s;
+        }
+
+        .play-button {
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF0000; /* Sonic blue color */
+            background-color: transparent;
+            border: 2px solid #00BFFF;
+            border-radius: 25px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .play-button:hover {
+            background-color: #00BFFF;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+        }
+
+        .play-button:focus {
+            outline: none;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .play-button {
+            animation: bounce 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <button class="play-button" onclick="showMessage()">PLAY</button>
+    <h1 id="message">Imagine liking Sonic in 2024. If you like him, tsk tsk tsk.. Sonic is the worst game to ever exist. Sonic literally sucks. It sucks and it
+    s trash. - from HackerJack3D</h1>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").style.opacity = "1";
+            document.getElementById("message").style.transition = "opacity 2s";
+        }
+    </script>
+</body>
+</html>
